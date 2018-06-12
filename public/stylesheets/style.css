@@ -1,0 +1,203 @@
+body {
+  /* This adds a background image to my webpage */
+  background: url('/images/background.jpg') center center no-repeat;
+  height: 100%;
+  background-size: cover;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+/* This allows the nav pill to look transparent (no color inside) */
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #d9d9d9;
+    opacity: 0.5;
+    background: transparent;
+    border: thin solid;
+    border-color: #d9d9d9;
+}
+
+/* Change the font size of all nav pills */
+.nav-pills {
+  font-size: 50px;
+}
+
+/* Color when mouse hovers over the pills */
+.nav>li:hover,.nav>li:focus {
+    background-color: #B8B8B8;
+}
+
+/* This specifies the 'about button' */
+#aboutbtn li.nav-item{
+  display: flex;
+  position: absolute;
+  right: 45.4%;
+}
+
+/* This specifies the position of the logo */
+#logo img {
+  margin: 0 auto !important;
+  position:relative;
+  padding-top: 80px;
+}
+
+/* intro sentence on the main page */
+#intro p {
+  color: white;
+  text-align: center;
+  position: relative;
+  font-family: "Amatic SC", cursive;
+  font-size: 1.8em;
+}
+/* First sentence on the about page */
+#mainAboutParagraph h1 {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 60pt;
+}
+
+/* Main paragraph on about page */
+#mainAboutParagraph p {
+  font-size: 15pt;
+  text-align: center;
+  border: solid white thin;
+}
+
+/* custom font and color */
+.custom {
+  color: #d9d9d9;
+  font-family: "Amatic SC", cursive;
+}
+
+/* Applies to all icons to be centered */
+#icons {
+  text-align: center;
+}
+
+/* Facebook icon */
+#icons .facebook:hover {
+  background: linear-gradient(blue, #1E35CD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/* LinkedIn icon */
+#icons .linkedin:hover {
+  background: linear-gradient(#7486FA, #4D60DE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/* Instagram icon */
+#icons .instagram:hover {
+  background: linear-gradient(red, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/* github icon */
+#icons .github:hover {
+  /* This is to change the color of the icon when you hover over it
+   without the color leaking */
+  background: linear-gradient(#AD61FA, #D9C5ED);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/* Search bar for the explore page */
+.searchbar input[type=text] {
+  /* margin allows page to scroll, makes page longer */
+  margin: 0px;
+  width: 50%;
+  left: 25%;
+  right: 25%;
+  /* moves the search bar to center of page */
+  top: 340px;
+  padding: 14px;
+  position: absolute;
+}
+
+#exploreP h1.custom {
+  text-align: center;
+  padding-top: 100px;
+  font-size: 60pt;
+}
+
+#aboutDiary h1.custom {
+  text-align: center;
+  padding-top: 100px;
+  font-size: 60pt;
+}
+
+#aboutDiary p.custom {
+  text-align: center;
+  font-size: 15pt;
+}
+
+#aboutToDo h1.custom {
+  text-align: center;
+  padding-top: 100px;
+  font-size: 60pt;
+}
+
+#aboutToDo p.custom {
+  text-align: center;
+  font-size: 15pt;
+}
+
+#aboutWishList h1.custom {
+  text-align: center;
+  padding-top: 100px;
+  font-size: 60pt;
+}
+
+#diaryIcons i.fa.fa-pencil {
+  color:#F0E68C;
+  padding: 14px;
+  position: absolute;
+}
+
+#todoForm label {
+  font-size: 30pt;
+  padding-left: 220pt;
+}
+
+#todoForm input {
+  /* margin allows page to scroll, makes page longer */
+  margin: 0px;
+  width: 40%;
+  left: 30%;
+  right: 25%;
+  /* moves the search bar to center of page */
+  top: 405px;
+  padding: 10px;
+  position: absolute;
+}
+
+#todoForm button.btn {
+  color: #d9d9d9;
+  opacity: 0.5;
+  background: transparent;
+  border: thin solid;
+  border-color: #d9d9d9;
+  font-size: 30pt;
+  padding: 5px;
+  left: 72%;
+  top: 390px;
+  position: absolute;
+}
+
+#todoForm p.custom {
+  font-size: 25pt;
+}

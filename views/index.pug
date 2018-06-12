@@ -1,0 +1,21 @@
+extends layout
+
+
+block content
+  section#logo
+    .container
+      .row
+        .col-md-12.text-center
+          img.img-fluid(src='/images/logo.png')
+          h1.custom Personify
+  section#intro
+    .container
+      .row
+        .col-md-12
+          p We're working hard, we'll be ready to launch soon...
+  body
+    section#aboutbtn
+      .container
+        ul.nav.nav-pills.nav-center
+          li.nav-item
+            a.nav-link.active(href="/about").custom About

@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  section#aboutToDo
+    h1.custom Start Managing Tasks!
+    p.custom
+      | We all have those days when there are a million things to do, and we don't know how we are going to get it all done.
+      br
+      | With the to-do list function of Personify to help you organize your tasks you will never have to fret again!
+    form(method="post")
+      div
+      #todoForm
+        label(for="task").custom Task:
+        hr
+        input(type="text" id="task" name="todo_task" placeholder='Enter a task...')
+        br
+        ul.nav.nav-pills.nav-center
+          li.nav-item
+            button.btn.nav-link.custom Enter
+        div
+        p.custom Task Entered: #{todo_task}
