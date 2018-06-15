@@ -154,21 +154,40 @@ body {
   font-size: 60pt;
 }
 
-#aboutDiary h1.custom {
+#aboutSignUp h1.custom {
   text-align: center;
   padding-top: 100px;
   font-size: 60pt;
 }
 
-#aboutDiary p.custom {
+#aboutSignUp p.custom {
   text-align: center;
   font-size: 15pt;
+}
+
+#aboutSignUp form {
+  margin: 50px;
+  font-family: "Quicksand";
+  color: gray;
+  width: 20%;
+  left: 36%;
+  right: 25%;
+  position: absolute;
+}
+
+#aboutSignUp button {
+  left: 33%;
+  position: absolute;
 }
 
 #startInstructions h1.custom {
   text-align: center;
   padding-top: 100px;
   font-size: 40pt;
+  display: block;
+  left: 50%;
+  position: relative;
+
 }
 
 #startInstructions p.custom {

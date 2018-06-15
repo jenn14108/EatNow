@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  section#aboutSignUp
+    h1.custom Sign Up
+    p.custom
+      | Sign up to save your past searches and previously visited restaurants.
+      br
+    form(method='post' action = saveUserInfo)
+      .form-group
+        label(for='email') Email address
+        input#email.form-control(type='email', placeholder='Enter email')
+      .form-group
+        label(for='username') Username
+        input#username.form-control(type='password', placeholder='Username')
+      .form-group
+        label(for='password') Password
+        input#password.form-control(type='password', placeholder='Password')
+      div
+      button.btn.btn-primary(type='submit') Submit
