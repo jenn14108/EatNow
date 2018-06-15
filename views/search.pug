@@ -1,0 +1,66 @@
+extends layout
+
+block content
+  section#startInstructions
+    h1.custom You are one step closer to eat now!
+    p.custom Start by selecting the types of food you would be down to eat:
+  div
+  section#checkBoxes
+    .container
+      .row
+        .col
+          .checkbox
+            label
+              input(type="checkbox", value = "")
+              | Chinese
+          .checkbox
+            label
+              input(type="checkbox", value = "")
+              | Japanese
+          .checkbox
+            label
+              input(type="checkbox", value = "")
+              | Vietnamese
+          .checkbox
+            label
+              input(type="checkbox", value = "")
+              | Thai
+          .checkbox
+            label
+              input(type="checkbox", value = "")
+              | Greek
+        .col
+          .checkbox
+            label
+              input(type="checkbox", value = "")
+              | American
+          .checkbox
+            label
+              input(type="checkbox", value = "")
+              | Mexican
+          .checkbox
+            label
+              input(type="checkbox", value = "")
+              | Indian
+          .checkbox
+            label
+              input(type="checkbox", value = "")
+              | Italian
+          .checkbox
+            label
+              input(type="checkbox", value = "")
+              | Korean
+      div
+      section#directSearch
+          p Or - directly search for restaurants serving a specific type of cuisine
+          form(method='post')
+            #searchForm
+              label(for="cuisine").custom Find:
+              hr
+              input(type="text" id="search" name="search_term" placeholder='Search anything...')
+              br
+              ul.nav.nav-pills.nav-center
+                li.nav-item
+                  button.btn.nav-link.custom Search
+              div
+              p.custom Search-term Entered: #{search_term}

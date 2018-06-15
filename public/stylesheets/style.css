@@ -1,19 +1,51 @@
+/* This sets the background color */
 body {
-  /* This adds a background image to my webpage */
-  background: url('/images/background.jpg') center center no-repeat;
-  height: 100%;
-  background-size: cover;
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #e8eae9;
+}
+
+/* This sets up the top banner */
+#banner h1.custom {
+  display: inline;
+  color: red;
+  font-size: 66px;
+  position: sticky;
+  top: 22px;
+  margin-left: -266px;
+
+}
+
+#banner img {
+  positive: relaive; /* allows for positional changes */
+  display:inline;
+  margin: 0 auto;
+  margin-left: -460px;
+  width: 100px;
+}
+
+#logo {
+  left: 30%;
+  color: red;
+}
+
+/* This specifies the position of the start button */
+#startbtn li.nav-item{
+  display: flex;
+  position: absolute;
+  left: 41.5%;
+}
+
+/* This moves all the rest of the buttons down */
+#buttons {
+  padding-top: 200px;
 }
 
 /* This allows the nav pill to look transparent (no color inside) */
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    color: #d9d9d9;
+    color: grey;
     opacity: 0.5;
     background: transparent;
     border: thin solid;
-    border-color: #d9d9d9;
+    border-color: grey;
 }
 
 /* Change the font size of all nav pills */
@@ -26,26 +58,12 @@ body {
     background-color: #B8B8B8;
 }
 
-/* This specifies the 'about button' */
-#aboutbtn li.nav-item{
-  display: flex;
-  position: absolute;
-  right: 45.4%;
-}
-
-/* This specifies the position of the logo */
-#logo img {
-  margin: 0 auto !important;
-  position:relative;
-  padding-top: 80px;
-}
-
 /* intro sentence on the main page */
 #intro p {
-  color: white;
+  color: gray;
   text-align: center;
   position: relative;
-  font-family: "Amatic SC", cursive;
+  font-family: "Bungee Shade";
   font-size: 1.8em;
 }
 /* First sentence on the about page */
@@ -57,6 +75,8 @@ body {
 
 /* Main paragraph on about page */
 #mainAboutParagraph p {
+  font-family: "Quicksand";
+  color: gray;
   font-size: 15pt;
   text-align: center;
   border: solid white thin;
@@ -64,8 +84,8 @@ body {
 
 /* custom font and color */
 .custom {
-  color: #d9d9d9;
-  font-family: "Amatic SC", cursive;
+  color: gray;
+  font-family: "Bungee Shade";
 }
 
 /* Applies to all icons to be centered */
@@ -145,15 +165,30 @@ body {
   font-size: 15pt;
 }
 
-#aboutToDo h1.custom {
+#startInstructions h1.custom {
   text-align: center;
   padding-top: 100px;
-  font-size: 60pt;
+  font-size: 40pt;
 }
 
-#aboutToDo p.custom {
+#startInstructions p.custom {
   text-align: center;
   font-size: 15pt;
+}
+
+#checkBoxes .col{
+  left: 20%;
+  vertical-align: left;
+  position: relative;
+  bottom: 1px;
+  font-family: "Quicksand";
+  color: gray;
+}
+
+#directSearch {
+  font-family: "Bungee Shade";
+  font-size: 15pt;
+  color: gray;
 }
 
 #aboutWishList h1.custom {
@@ -168,36 +203,37 @@ body {
   position: absolute;
 }
 
-#todoForm label {
+#searchForm label {
   font-size: 30pt;
-  padding-left: 220pt;
+  padding-left: 120pt;
 }
 
-#todoForm input {
+#searchForm input {
   /* margin allows page to scroll, makes page longer */
   margin: 0px;
-  width: 40%;
-  left: 30%;
+  width: 30%;
+  left: 34%;
   right: 25%;
   /* moves the search bar to center of page */
-  top: 405px;
+  top: 432px;
   padding: 10px;
   position: absolute;
+  font-family: "Quicksand";
 }
 
-#todoForm button.btn {
-  color: #d9d9d9;
+#searchForm button.btn {
+  color: gray;
   opacity: 0.5;
   background: transparent;
   border: thin solid;
   border-color: #d9d9d9;
   font-size: 30pt;
   padding: 5px;
-  left: 72%;
-  top: 390px;
+  left: 65%;
+  top: 419.5px;
   position: absolute;
 }
 
-#todoForm p.custom {
+#searchForm p.custom {
   font-size: 25pt;
 }
