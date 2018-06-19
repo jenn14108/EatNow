@@ -11,7 +11,6 @@ const
   aboutRouter = require('./routes/about');
   searchRouter = require('./routes/search');
   //signUpRouter = require('./routes/signUp');
-  exploreRouter = require('./routes/explore');
 
 
 var app = express();
@@ -39,7 +38,6 @@ app.use('/', mainPageRouter);
 app.use('/about', aboutRouter);
 app.use('/search', searchRouter);
 //app.use('/signUp', signUpRouter);
-app.use('/explore', exploreRouter);
 
 //routing for the page that stores information into the database
 app.get('userInfo', userInfoController.getAllUserInfo);
