@@ -8,9 +8,10 @@ exports.getAllUserInfo = ( req, res ) => {
   console.log('in getAllUserInfo')
   UserInfo.find( {} )
     .exec()
-    .then( ( userInfo ) => {
-      res.render( 'userInfo', {
-        userInfo: userInfo
+    .then( ( signUp ) => {
+      res.render( 'signUp', {
+        //userInfo: userInfo
+        signUp : signUp
       } );
     } )
     .catch( ( error ) => {
@@ -23,19 +24,23 @@ exports.getAllUserInfo = ( req, res ) => {
 };
 
 exports.saveUserInfo = ( req, res ) => {
-  console.log("in saveUserInfo!")
-  console.dir(req)
+  console.log("in saveUserInfo!");
+  console.dir(req);
   let newUser = new userInfo( {
-    name: req.body.name,
+    email: req.body.email,
     username: req.body.username,
     password: req.body.password
-  } )
+  })
+
+  console.log(req.body.email)
+  console.log(req.body.username)
+  console.log(req.body.password)
 
   console.log("user = "+ newUser)
 
   newUser.save()
     .then( () => {
-      res.redirect( '/userInfo' );
+      res.redirect( '/signUp' );
     } )
     .catch( error => {
       res.send( error );
@@ -44,22 +49,22 @@ exports.saveUserInfo = ( req, res ) => {
 
 exports.deleteUserInfo = (req, res) => {
   console.log("in deleteUserInfo")
-  let userName = req.body.deleteName
-  if (typeof(userName)=='string') {
-      UserInfo.deleteOne({name:userName})
+  let userEmail = req.body.deleteEmail
+  if (typeof(userEmail)=='string') {
+      UserInfo.deleteOne({email:userEmail})
            .exec()
-           .then(()=>{res.redirect('/userInfo')})
+           .then(()=>{res.redirect('/signUp')})
            .catch((error)=>{res.send(error)})
-  } else if (typeof(userName)=='object'){ //if it's a list
-      UserInfo.deleteMany({name:{$in:userName}})
+  } else if (typeof(userEmail)=='object'){ //if it's a list
+      UserInfo.deleteMany({email:{$in:userEmail}})
            .exec()
-           .then(()=>{res.redirect('/userInfo')})
+           .then(()=>{res.redirect('/signUp')})
            .catch((error)=>{res.send(error)})
-  } else if (typeof(userName)=='undefined'){
-      console.log("This is if they didn't select their name")
-      res.redirect('/userInfo')
+  } else if (typeof(email)=='undefined'){
+      console.log("This is if they didn't select their email")
+      res.redirect('/signUp')
   } else {
     console.log("This shouldn't happen!")
-    res.send(`unknown userName: ${userName}`)
+    res.send(`unknown email: ${userEmail}`)
   }
 };

@@ -42,10 +42,7 @@ app.use('/search', searchRouter);
 app.use('/explore', exploreRouter);
 
 //routing for the page that stores information into the database
-console.log('a');
-console.dir(userInfoController.getAllUserInfo);
 app.get('userInfo', userInfoController.getAllUserInfo);
-console.log('b');
 app.post('/saveUserInfo', userInfoController.saveUserInfo);
 app.post('/deleteUserInfo', userInfoController.deleteUserInfo);
 
