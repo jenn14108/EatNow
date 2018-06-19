@@ -53,11 +53,11 @@ block content
       div
       section#directSearch
           p Or - directly search for restaurants serving a specific type of cuisine
-          form(method='post')
+          form(method='post' action = 'saveSearchTerm')
             #searchForm
               label(for="cuisine").custom Find:
               hr
-              input(type="text" id="search" name="search_term" placeholder='Search anything...')
+              input(type="text" id="search" name="term" placeholder='Search anything...')
               br
               ul.nav.nav-pills.nav-center
                 li.nav-item

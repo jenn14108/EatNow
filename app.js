@@ -5,11 +5,12 @@ const
   cookieParser = require('cookie-parser');
   logger = require('morgan');
   userInfoController = require('./controllers/userInfoController');
+  searchHistoryController = require('./controllers/searchHistoryController');
   mongoose = require( 'mongoose');
 
   mainPageRouter = require('./routes/mainPage');
   aboutRouter = require('./routes/about');
-  searchRouter = require('./routes/search');
+//searchRouter = require('./routes/search');
   //signUpRouter = require('./routes/signUp');
 
 
@@ -36,13 +37,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', mainPageRouter);
 app.use('/about', aboutRouter);
-app.use('/search', searchRouter);
+//app.use('/search', searchRouter);
 //app.use('/signUp', signUpRouter);
 
-//routing for the page that stores information into the database
+//routing for the page that stores user information into the database
 app.get('/signUp', userInfoController.getAllUserInfo);
 app.post('/saveUserInfo', userInfoController.saveUserInfo);
 app.post('/deleteUserInfo', userInfoController.deleteUserInfo);
+
+//routing for the page that stores search terms into the database
+//no need for deletion because we want to keep search history
+app.get('/search', searchHistoryController.getAllSearchTerms);
+app.post('/saveSearchTerm', searchHistoryController.saveSearchTerm);
 
 app.use('/', function(req, res, next) {
   console.log("in / controller")
