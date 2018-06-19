@@ -8,10 +8,11 @@ exports.getAllUserInfo = ( req, res ) => {
   console.log('in getAllUserInfo')
   UserInfo.find( {} )
     .exec()
-    .then( ( signUp ) => {
+    .then( (userInfo) => {
+      console.log(`userInfo=${userInfo}`)
       res.render( 'signUp', {
         //userInfo: userInfo
-        signUp : signUp
+        info:userInfo
       } );
     } )
     .catch( ( error ) => {
@@ -26,7 +27,7 @@ exports.getAllUserInfo = ( req, res ) => {
 exports.saveUserInfo = ( req, res ) => {
   console.log("in saveUserInfo!");
   console.dir(req);
-  let newUser = new userInfo( {
+  let newUser = new UserInfo( {
     email: req.body.email,
     username: req.body.username,
     password: req.body.password
@@ -35,8 +36,6 @@ exports.saveUserInfo = ( req, res ) => {
   console.log(req.body.email)
   console.log(req.body.username)
   console.log(req.body.password)
-
-  console.log("user = "+ newUser)
 
   newUser.save()
     .then( () => {

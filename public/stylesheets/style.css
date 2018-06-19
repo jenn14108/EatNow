@@ -54,7 +54,7 @@ body {
 }
 
 /* Color when mouse hovers over the pills */
-.nav>li:hover,.nav>li:focus {
+.nav>li:hover,.nav>li:focus  {
     background-color: #B8B8B8;
 }
 

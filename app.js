@@ -40,7 +40,7 @@ app.use('/search', searchRouter);
 //app.use('/signUp', signUpRouter);
 
 //routing for the page that stores information into the database
-app.get('userInfo', userInfoController.getAllUserInfo);
+app.get('/signUp', userInfoController.getAllUserInfo);
 app.post('/saveUserInfo', userInfoController.saveUserInfo);
 app.post('/deleteUserInfo', userInfoController.deleteUserInfo);
 
