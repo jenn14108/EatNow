@@ -13,8 +13,8 @@ const
 //searchRouter = require('./routes/search');
   //signUpRouter = require('./routes/signUp');
 
-
 var app = express();
+
 
 //connect to database
 mongoose.connect( 'mongodb://localhost/EatNow')
