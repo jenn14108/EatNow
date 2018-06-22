@@ -7,7 +7,7 @@ block content
     ul
       each i in info
         li #{i.email}
-    
+
     p.custom
       | Sign up to save your past searches and previously visited restaurants.
       br
@@ -23,3 +23,7 @@ block content
         input#password.form-control(type='password', name='password', placeholder='Password')
       div
       button.btn.btn-primary(type='submit') Submit
+
+    #signedUp
+      p.custom Already have an account?
+      button.btn.btn-primary(type='Log In') Log In
