@@ -169,8 +169,8 @@ body {
   padding-top: 420px;
 }
 
-#signedUp button {
-  margin-left: 186px;
+#signedUp a.button {
+  margin-left: 636px;
   margin-bottom: 100px;
 }
 

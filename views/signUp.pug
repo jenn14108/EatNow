@@ -4,9 +4,9 @@ block content
   section#aboutSignUp
     h1.custom Sign Up
 
-    ul
-      each i in info
-        li #{i.email}
+      //    ul
+      //      each i in info
+      //        li #{i.email}
 
     p.custom
       | Sign up to save your past searches and previously visited restaurants.
@@ -26,4 +26,4 @@ block content
 
     #signedUp
       p.custom Already have an account?
-      button.btn.btn-primary(type='Log In') Log In
+      a.button.btn.btn-primary.btn-active(href="/login") Log In

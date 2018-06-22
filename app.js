@@ -18,7 +18,6 @@ const
 
 var app = express();
 
-
 //connect to database
 mongoose.connect( 'mongodb://localhost/EatNow')
 const db = mongoose.connection;
