@@ -6,9 +6,11 @@ const
   logger = require('morgan');
   userInfoController = require('./controllers/userInfoController');
   searchHistoryController = require('./controllers/searchHistoryController');
+  restaurantsController = require('./controllers/restaurantController');
   mongoose = require( 'mongoose');
   mainPageRouter = require('./routes/mainPage');
   aboutRouter = require('./routes/about');
+  resultsRouter = require('./routes/results');
   //Set up needed variables in order to do authentication
   //GoogleStrategy = require('passport-google-oauth').OAuth25Strategy; --> in cofig/passport.js
   session = require('express-session');
@@ -41,8 +43,24 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+//route middleware to make sure a user is logged in to see certain pages
+function isLoggedIn(req,res,next) {
+  console.long("checking to see if user is authenticated!");
+  //if user is authenticated in the session, continue
+  res.locals.loggedIn = false;
+  if (req.isAuthenticated()){
+    console.log("user has been Authenticated");
+    return next();
+  } else {
+    console.log("user has not been auntheticated...");
+    res.redirect('/login');
+  }
+}
+
+
 app.use('/', mainPageRouter);
 app.use('/about', aboutRouter);
+app.use('/results', resultsRouter);
 //app.use('/search', searchRouter);
 //app.use('/signUp', signUpRouter);
 
@@ -76,6 +94,9 @@ app.get('/login/authorized',
                 failureRedirect : '/loginerror'
         }));
 
+//routing for the restaurants results mainPage
+app.get('/results', restaurantsController.getRestaurant);
+app.post('/addRestaurants', restaurantsController.saveRestaurant);
 
 //routing for the page that stores user information into the database
 app.get('/signUp', userInfoController.getAllUserInfo);

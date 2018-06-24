@@ -55,12 +55,17 @@ block content
           p Or - directly search for restaurants serving a specific type of cuisine
           form(method='post' action = 'saveSearchTerm')
             #searchForm
-              label(for="cuisine").custom Find:
-              hr
-              input(type="text" id="search" name="term" placeholder='Search anything...')
-              br
-              ul.nav.nav-pills.nav-center
-                li.nav-item
-                  button.btn.nav-link.custom Search
-              div
-              p.custom Search-term Entered: #{search_term}
+              .row
+                label(for="cuisine").custom Find:
+                hr
+                input(type="text" id="search" name="term" placeholder='Search anything...')
+                br
+                button.btn.custom.btn-primary(href = "/results" type='submit') Submit
+
+                //ul.nav.nav-pills.nav-center(type="submit")
+                //  li.nav-item
+                //    a.nav-link.active(href="/results").custom Search
+
+            //COMMENTED OUT
+            //div
+            //  p.custom Search-term Entered: #{search_term}

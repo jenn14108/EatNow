@@ -1,10 +1,11 @@
 'use strict';
 var mongoose = require( 'mongoose' );
 
-var restaurantSchema = new mongoose.Schema({
+var restaurantsSchema = new mongoose.Schema({
   name: String,
   location: String,
   food_type: String
 });
 
-module.exports = mongoose.model( 'restaurants', restaurantSchema );
+var Restaurant = mongoose.model( 'restaurants', restaurantsSchema, 'restaurants');
+module.exports = Restaurant;

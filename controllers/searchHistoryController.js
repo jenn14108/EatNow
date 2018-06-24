@@ -25,17 +25,17 @@ exports.getAllSearchTerms = ( req, res ) => {
 };
 
 exports.saveSearchTerm = ( req, res ) => {
-  console.log("in saveSearchTerm!");
-  console.dir(req);
+  console.log("in saveSearchTerm!!!!!!");
+  //console.dir(req);
   let newSearchTerm = new searchHistory( {
     term: req.body.term
   })
 
-  console.log(req.body.term)
+  console.log(newSearchTerm);
 
   newSearchTerm.save()
     .then( () => {
-      res.redirect( '/search' );
+      res.redirect( '/results' );
     } )
     .catch( error => {
       res.send( error );

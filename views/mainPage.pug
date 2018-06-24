@@ -1,33 +1,34 @@
 extends layout
 
 block content
-  section#banner
-    .container
-      .row
-        .col-md-12.text-center
-          h1.custom EAT NOW
-          img.img-fluid(src='/images/logo.png')
-  section#logo
-    i.fas.fa-utensils.fa-5x(aria-hidden="true")
-  section#intro
-    .container
-      .row
-        .col-md-12
-          p Can't decide where to eat? Don't worry - we've got your back!
+  section#sidebar.w3-sidebar.w3-bar-block.w3-collapse.w3-card(style='display:none')
+    button.w3-bar-item.w3-button.w3-hide-large(onclick='w3_close()') Close &times;
+    a.w3-bar-item.w3-button(href='/addRestaurants') Add Restaurants
+    a.w3-bar-item.w3-button(href='#') Link2
+    a.w3-bar-item.w3-button(href='#') Link3
+  .w3-main
+    .w3-teal
+      button.w3-button.w3-teal.w3-xlarge(onclick='w3_open()')  &#x2630;
+      .w3-container
+        section#banner
+          .container
+            .row
+              .col-md-12.text-center
+                h1.custom EAT NOW
+                img.img-fluid(src='/images/logo.png')
+        section#logo
+          i.fas.fa-utensils.fa-5x(aria-hidden="true")
+        section#intro
+          .container
+            .row
+              .col-md-12
+                p Can't decide where to eat? Don't worry - we've got your back!
 
-  section#startbtn
-    .container
-       ul.nav.nav-pills.nav-center
-         li.nav-item
-            a.nav-link.active(href="/search").custom Start
-
-  section#buttons
-    ul.nav.nav-pills.nav-fill
-        li.nav-item
-          a.nav-link.active(href="/").custom Home
-        .col
-        li.nav-item
-          a.nav-link.active(href="/about").custom About
-    ul.nav.nav-pills.nav-fill
-      li.nav-item
-        a.nav-link.active(href="/signUp").custom Sign Up
+        section#buttons
+          .container
+                ul.nav.nav-pills.nav-fill
+                  li.nav-item
+                    a.nav-link.active(href="/about").custom About
+                ul.nav.nav-pills.nav-fill
+                  li.nav-item
+                    a.nav-link.active(href="/signUp").custom Sign Up
