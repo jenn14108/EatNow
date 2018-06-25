@@ -95,6 +95,7 @@ app.get('/login/authorized',
         }));
 
 //routing for the restaurants results mainPage
+app.get('/addRestaurants', restaurantsController.getAllRestaurants);
 app.get('/results', restaurantsController.getRestaurant);
 app.post('/addRestaurants', restaurantsController.saveRestaurant);
 

@@ -3,9 +3,29 @@
 'use strict';
 const RestaurantInfo = require('../models/restaurants.js');
 console.log("loading the restaurant controller");
-
 //this saves a restaurant input by the user
 
+
+// this displays all of the users and their information
+exports.getAllRestaurants = ( req, res ) => {
+  console.log('in getAllRestaurants')
+  RestaurantInfo.find( {} )
+    .exec()
+    .then( (restaurants) => {
+      console.log(`restaurants=${restaurants}`)
+      res.render( 'addRestaurants', {
+        //userInfo: userInfo
+        restaurants:restaurants
+      } );
+    } )
+    .catch( ( error ) => {
+      console.log( error.message );
+      return [];
+    } )
+    .then( () => {
+      console.log( 'restaurant promise complete' );
+    } );
+};
 
 //This displays one restaurant that matches querying results
 exports.saveRestaurant = (req, res) => {

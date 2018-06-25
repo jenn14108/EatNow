@@ -103,10 +103,15 @@ body {
   border: solid white thin;
 }
 
-#results h1.custom {
+#addRestaurant h1.custom {
   text-align: center;
   padding-top: 50px;
-  font-size: 30pt;
+  font-size: 42pt;
+}
+
+#addRestaurant p.custom {
+  text-align: center;
+  font-size: 15pt;
 }
 
 /* custom font and color */
@@ -287,4 +292,10 @@ body {
 
 #searchForm p.custom {
   font-size: 25pt;
+}
+
+#newRestaurantForm button {
+  background: transparent;
+  border: thin solid grey;
+  color: grey;
 }

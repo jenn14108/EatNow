@@ -1,9 +1,108 @@
 extends layout
 
 block content
-  section#results
+  section#addRestaurant
     h1.custom Add A Restaurant
     p.custom
       | Have a restaurant that is not already in our database that you would like
       br
-      | to add? Go head - add it below! 
+      | to add? Go head - add it below!
+  section#newRestaurantForm
+    form(method='post' action = 'saveRestaurant')
+      .form-group
+        label(for='name') Restaurant Name
+        input#name.form-control(type='text',name ='name', placeholder="Enter the restaurant's name")
+      .form-group
+        .dropdown
+          button.btn.btn-primary.dropdown-toggle(name = 'location', type='button', data-toggle='dropdown')
+            | Location
+            span.caret
+            ul.dropdown-menu
+              li
+                a(href='#') Boston
+              li
+                a(href='#') Cambridge
+              li
+                a(href='#') Wellesley
+              li
+                a(href='#') Brookline
+              li
+                a(href='#') Lexington
+              li
+                a(href='#') Worcester
+              li
+                a(href='#') Needham
+              li
+                a(href='#') Newton
+              li
+                a(href='#') Springfield
+              li
+                a(href='#') Belmont
+              li
+                a(href='#') Somerville
+              li
+                a(href='#') Concord
+              li
+                a(href='#') Seaport
+              li
+                a(href='#') Waltham
+              li
+                a(href='#') Westford
+              li
+                a(href='#') Melrose
+              li
+                a(href='#') Quincy
+              li
+                a(href='#') Lynn
+              li
+                a(href='#') Newburyport
+              li
+                a(href='#') Brockton
+              li
+                a(href='#') Weston
+              li
+                a(href='#') Malden
+              li
+                a(href='#') Andover
+              li
+                a(href='#') Woburn
+              li
+                a(href='#') Acton
+              li
+                a(href='#') Plymouth
+              li
+                a(href='#') Beverly
+              li
+                a(href='#') Watertown
+              li
+                a(href='#') Natick
+      .form-group
+        .dropdown
+          button.btn.btn-primary.dropdown-toggle(name = 'food_type', type='button', data-toggle='dropdown')
+            | Type of Food
+            span.caret
+            ul.dropdown-menu
+              li
+                a(href='#') Asian Fusion
+              li
+                a(href='#') American
+              li
+                a(href='#') Chinese
+              li
+                a(href='#') Japanese
+              li
+                a(href='#') Vietnamese
+              li
+                a(href='#') Thai
+              li
+                a(href='#') Greek
+              li
+                a(href='#') Mexican
+              li
+                a(href='#') Indian
+              li
+                a(href='#') Italian
+              li
+                a(href='#') Korean
+      div
+      button.btn.btn-primary(type='submit') Submit
