@@ -11,25 +11,24 @@ html(lang="en")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Quicksand:500,700")
     block head
   body
-    ul.nav.navbar-nav.navbar-right
-    #mySidenav.sidenav
-      a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
-      a.mono(href='#') Home
-      a.mono(href='#') Recent Searches
-      if loggedIn
-        a.mono(href='/users') Your Profile
-        a.mono(href="/addRestaurants") Add Restaurants
-        a.mono(href='/logout') log Out
-    span(style='font-size:30px;cursor:pointer' onclick='openNav()') &#x2630;
+      .pos-f-t
+        #navbarToggleExternalContent.collapse
+          .bg-dark.p-4
+            h4.text-white Welcome
+            span.text-muted Thank you for logging into EatNow!
+            ul.nav.nav-pills.nav-fill
+              li.nav-item
+                a.nav-link.active(href="#").custom Add A Restaurant
+            ul.nav.nav-pills.nav-fill
+              li.nav-item
+                a.nav-link.active(href="#").custom Recent Searches
+        nav.navbar.navbar-dark.bg-dark
+          button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarToggleExternalContent', aria-controls='navbarToggleExternalContent', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
 
-    block content
-    script.
-      function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-      }
-      function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      }
+
+  block content
+  .script
     script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous")

@@ -5,20 +5,21 @@ body {
 
 /* This sets up the top banner */
 #banner h1.custom {
-  display: inline;
+  display: inline-block;
   color: red;
   font-size: 66px;
   position: sticky;
-  top: 22px;
+  top: 10000px;
   margin-left: -266px;
 }
 
 #banner img {
   positive: relaive; /* allows for positional changes */
-  display:inline;
+  display:inline-block;
   margin: 0 auto;
   margin-left: -460px;
   width: 100px;
+  top: 20px;
 }
 
 #logo {
@@ -43,6 +44,19 @@ body {
   width: 20%;
 }
 
+#navbarToggleExternalContent .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  display: inline-block;
+  color: grey;
+  opacity: 0.5;
+  background: transparent;
+  border: thin solid;
+  border-color: grey;
+}
+
+#navbarToggleExternalContent .nav>li:hover  {
+    background-color: #B8B8B8;
+}
+
 /* This allows the nav pill to look transparent (no color inside) */
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: grey;
@@ -59,23 +73,23 @@ body {
 
 /* Color when mouse hovers over the pills */
 .nav>li:hover  {
-    background-color: #B8B8B8;
+  background-color: #B8B8B8;
 }
 
-#buttons a[href="/signUp"]{
+#banner a[href="/signUp"]{
+  display: inline-block;
   color: grey;
   opacity: 0.5;
   font-size: 35px;
   border: thin solid;
   border-color: grey;
   position: absolute;
-  top: 0;
+  top: 0px;
   right: 0;
   margin-top: 26px;
-  margin-right: 36px;
 }
 
-#buttons a[href="/signUp"]:hover {
+#banner a[href="/signUp"]:hover {
   background-color: #C2FFB5;
 }
 
@@ -185,7 +199,7 @@ body {
 }
 
 #signedUp a.button {
-  margin-left: 666px;
+  margin-left: 510px;
   margin-bottom: 100px;
 }
 
@@ -332,24 +346,3 @@ body {
   transition: 0.5s;
   padding-top: 60px;
 }
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #FFFFFF;
-  display: block;
-  transition: 0.3s;
-} */
- .sidenav a:hover {
-  color: #f1f1f1;
-}
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-
-/*this is the end of the side bar CSS */
