@@ -294,8 +294,62 @@ body {
   font-size: 25pt;
 }
 
+#newRestaurantForm form {
+  display: inline;
+  margin: 100px;
+  font-family: "Quicksand";
+  color: gray;
+  width: 20%;
+  left: 36%;
+  right: 25%;
+  position: absolute;
+}
+
+#newRestaurantForm input#name {
+  width: 100%;
+}
+
 #newRestaurantForm button {
   background: transparent;
   border: thin solid grey;
   color: grey;
 }
+
+#results h1.custom {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #18395C;
+  /* overflow-x: hidden; */
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #FFFFFF;
+  display: block;
+  transition: 0.3s;
+} */
+ .sidenav a:hover {
+  color: #f1f1f1;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+/*this is the end of the side bar CSS */
