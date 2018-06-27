@@ -14,14 +14,13 @@ html(lang="en")
       .pos-f-t
         #navbarToggleExternalContent.collapse
           .bg-dark.p-4
-            h4.text-white.custom Welcome
-            span.text-white.custom Thank you for logging into EatNow!
+            h4.text-white.custom Welcome, logged-in user
             ul.nav.nav-pills.nav-fill
               li.nav-item
-                a.nav-link.active(href="#").custom Add A Restaurant
+                a.nav-link.active(href="addRestaurants").custom Add A Restaurant
             ul.nav.nav-pills.nav-fill
               li.nav-item
-                a.nav-link.active(href="#").custom Recent Searches
+                a.nav-link.active(href="recentSearches").custom Recent Searches
         nav.navbar.navbar-dark.bg-dark
           button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarToggleExternalContent', aria-controls='navbarToggleExternalContent', aria-expanded='false', aria-label='Toggle navigation')
             span.navbar-toggler-icon

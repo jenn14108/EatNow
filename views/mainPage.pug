@@ -16,8 +16,29 @@ block content
         .col-md-12
           p Can't decide where to eat? Don't worry - we've got your back!
 
-  section#buttons
+  section#aboutButton
     .container
-          ul.nav.nav-pills.nav-fill
-            li.nav-item
+          nav.nav-pills.nav-fill
+            .nav-item
               a.nav-link.active(href="/about").custom About
+
+  section#carousel
+    .container
+      #bootstrapCarousel.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+          li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+          li(data-target='#carouselExampleIndicators', data-slide-to='1')
+          li(data-target='#carouselExampleIndicators', data-slide-to='2')
+        .carousel-inner
+          .carousel-item.active
+            img.d-block.w-100(src='http://placehold.it/800x800', alt='First slide')
+          .carousel-item
+            img.d-block.w-100(src='http://placehold.it/800x800', alt='Second slide')
+          .carousel-item
+            img.d-block.w-100(src='http://placehold.it/800x800', alt='Third slide')
+        a.carousel-control-prev(href='#bootstrapCarousel', role='button', data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#bootstrapCarousel', role='button', data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next

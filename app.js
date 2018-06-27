@@ -11,6 +11,8 @@ const
   mainPageRouter = require('./routes/mainPage');
   aboutRouter = require('./routes/about');
   resultsRouter = require('./routes/results');
+  recentSearchesRouter = require('./routes/recentSearches');
+
   //Set up needed variables in order to do authentication
   //GoogleStrategy = require('passport-google-oauth').OAuth25Strategy; --> in cofig/passport.js
   session = require('express-session');
@@ -57,7 +59,7 @@ function isLoggedIn(req,res,next) {
   }
 }
 
-
+app.use('/recentSearches', recentSearchesRouter);
 app.use('/', mainPageRouter);
 app.use('/about', aboutRouter);
 app.use('/results', resultsRouter);

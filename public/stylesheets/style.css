@@ -27,21 +27,29 @@ body {
   color: red;
 }
 
+#bootstrapCarousel .container{
+  height: 600px;
+  margin-top: -70px;
+  margin-left:50px;
+  margin-right:50px;
+}
+
 /* This specifies the position of the start button */
 #startbtn li.nav-item{
   text-align: center;
   margin-top: 60px;
   margin-left: 440px;
   position: absolute;
+  font-size: 50px;
 }
 
-/* This moves all the rest of the buttons down */
-#buttons {
-  padding-top: 200px;
-}
-
-#buttons About {
+#aboutButton ul.nav {
+  text-align: center;
+  position: absolute;
+  padding-top: 12px;
+  font-size: 40px;
   width: 20%;
+  left: 40%;
 }
 
 #navbarToggleExternalContent .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -75,7 +83,7 @@ body {
 }
 
 /* Color when mouse hovers over the pills */
-.nav>li:hover  {
+.nav>li:hover, #aboutButton .nav-item:hover {
   background-color: #B8B8B8;
 }
 
@@ -288,7 +296,7 @@ body {
   left: 34%;
   right: 25%;
   /* moves the search bar to center of page */
-  top: 432px;
+  top: 488px;
   padding: 10px;
   position: absolute;
   font-family: "Quicksand";
