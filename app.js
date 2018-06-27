@@ -35,6 +35,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 //CODE FOR AUTHENTICATION
+app.use(session({secret: 'zzbbyanana'}));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -47,7 +48,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //route middleware to make sure a user is logged in to see certain pages
 function isLoggedIn(req,res,next) {
-  console.long("checking to see if user is authenticated!");
+  console.log("checking to see if user is authenticated!");
   //if user is authenticated in the session, continue
   res.locals.loggedIn = false;
   if (req.isAuthenticated()){
@@ -60,6 +61,27 @@ function isLoggedIn(req,res,next) {
     res.redirect('/login');
   }
 }
+
+
+// here is where we check on their logged in status
+app.use((req,res,next) => {
+  res.locals.loggedIn = false
+  if (req.isAuthenticated()){
+    console.log("user has been Authenticated")
+    res.locals.user = req.user
+    res.locals.loggedIn = true
+    if (req.user){
+      if (req.user.googleemail=='tjhickey@brandeis.edu'){
+        console.log("Owner has logged in")
+        res.locals.status = 'teacher'
+      } else {
+        console.log('student has logged in')
+        res.locals.status = 'student'
+      }
+    }
+  }
+  next()
+})
 
 app.use('/recentSearches', recentSearchesRouter);
 app.use('/', mainPageRouter);
