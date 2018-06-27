@@ -318,12 +318,13 @@ body {
 }
 
 #newRestaurantForm form {
+  font-size: 20px;
   display: inline;
   margin: 100px;
   font-family: "Quicksand";
   color: gray;
   width: 20%;
-  left: 36%;
+  left: 33%;
   right: 25%;
   position: absolute;
 }
