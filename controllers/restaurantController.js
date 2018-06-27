@@ -1,7 +1,7 @@
 //this database is already pre-filled. Users with an
 //account can add to it
 'use strict';
-const RestaurantInfo = require('../models/restaurants.js');
+const RestaurantInfo = require('../models/restaurant.js');
 console.log("loading the restaurant controller");
 //this saves a restaurant input by the user
 
@@ -14,7 +14,6 @@ exports.getAllRestaurants = ( req, res ) => {
     .then( (restaurants) => {
       console.log(`restaurants=${restaurants}`)
       res.render( 'addRestaurants', {
-        //userInfo: userInfo
         restaurants:restaurants
       } );
     } )
@@ -31,7 +30,7 @@ exports.getAllRestaurants = ( req, res ) => {
 exports.saveRestaurant = (req, res) => {
   console.log("in saveRestaurant!");
   console.dir(req);
-  let newRestaurant = new Restaurant({
+  let newRestaurant = new RestaurantInfo({
     name: req.body.name,
     location: req.body.location,
     food_type: req.body.food_type
