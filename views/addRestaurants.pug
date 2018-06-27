@@ -7,111 +7,67 @@ block content
       | Have a restaurant that is not already in our database that you would like
       br
       | to add? Go head - add it below!
+
   section#newRestaurantForm
     form(method='post' action = 'saveRestaurant')
-      .form-group
         label(for='name') Restaurant Name:
         input#name.form-control(for = 'name', type='text',name ='name', placeholder="Enter the restaurant's name")
-      .form-group
-          .dropdown
-          button.btn.btn-primary.dropdown-toggle(for= 'location', name = 'location', type='button', data-toggle='dropdown')
-            span#title Location
-            span.caret
-            ul#options.dropdown-menu
-              li
-                a Boston
-              li
-                a Cambridge
-              li
-                a Wellesley
-              li
-                a Brookline
-              li
-                a Lexington
-              li
-                a Worcester
-              li
-                a Needham
-              li
-                a Newton
-              li
-                a Springfield
-              li
-                a Belmont
-              li
-                a Somerville
-              li
-                a Concord
-              li
-                a Seaport
-              li
-                a Waltham
-              li
-                a Westford
-              li
-                a Melrose
-              li
-                a Quincy
-              li
-                a Lynn
-              li
-                a Newburyport
-              li
-                a Brockton
-              li
-                a Weston
-              li
-                a Malden
-              li
-                a Andover
-              li
-                a Woburn
-              li
-                a Acton
-              li
-                a Plymouth
-              li
-                a Beverly
-              li
-                a Watertown
-              li
-                a Natick
-      .form-group
-        .dropdown
-          button.btn.btn-primary.dropdown-toggle(for = 'food_type', name = 'food_type', type='button', data-toggle='dropdown')
-            span#title Type of Food
-            span.caret
-            ul.dropdown-menu
-              li
-                a Asian Fusion
-              li
-                a American
-              li
-                a Chinese
-              li
-                a Japanese
-              li
-                a Vietnamese
-              li
-                a Thai
-              li
-                a Greek
-              li
-                a Mexican
-              li
-                a Indian
-              li
-                a Italian
-              li
-                a Korean
-      div
-      button.btn.btn-primary(type='submit') Submit
+        br
+        |   Location:
+        select.form-control.form-control-sm(type='text', name='location', value = location)
+          option Boston
+          option Cambridge
+          option Wellesley
+          option Brookline
+          option Lexington
+          option Worcester
+          option Needham
+          option Newton
+          option Springfield
+          option Belmont
+          option Somerville
+          option Concord
+          option Seaport
+          option Waltham
+          option Westford
+          option Melrose
+          option Quincy
+          option Lynn
+          option Newburyport
+          option Brockton
+          option Weston
+          option Malden
+          option Andover
+          option Woburn
+          option Acton
+          option Plymouth
+          option Beverly
+          option Watertown
+          option Natick
+        br
+        |  Type of Food:
+        select.form-control.form-control-sm(type='text', name='food_type', value=food_type)
+          option Asian Fusion
+          option American
+          option Chinese
+          option Japanese
+          option Vietnamese
+          option Thai
+          option Greek
+          option Mexican
+          option Indian
+          option Italian
+          option Korean
+        br
+        button.btn.btn-primary(type='submit') Submit
+
+
 
   script.
     $(function() {
-
       });
     });
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
