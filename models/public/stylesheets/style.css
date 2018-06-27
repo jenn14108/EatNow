@@ -1,0 +1,341 @@
+/* This sets the background color */
+body {
+  background-color: #e8eae9;
+}
+
+#banner .container {
+  margin: 20px auto 20px auto;
+}
+
+/* This sets up the top banner */
+#banner h1.custom {
+  display: inline-block;
+  color: red;
+  font-size: 66px;
+  position: sticky;
+  top: 10000px;
+  margin-left: -266px;
+}
+
+#banner img {
+  positive: relaive; /* allows for positional changes */
+  display:inline-block;
+  margin: 0 auto;
+  margin-left: -460px;
+  width: 100px;
+  top: 20px;
+}
+
+#logo {
+  left: 30%;
+  color: red;
+}
+
+#carousel .container {
+  padding: 50px 0px 50px 0px;
+}
+
+/* This specifies the position of the start button */
+#startbtn li.nav-item{
+  text-align: center;
+  margin-top: 60px;
+  margin-left: 440px;
+  position: absolute;
+  font-size: 50px;
+}
+
+#aboutButton a.nav-link {
+  width: fit-content;
+  margin: 16px auto 16px auto;
+  font-size: 40px;
+}
+
+/* This allows the nav pill to look transparent (no color inside) */
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: grey;
+    opacity: 0.5;
+    background: transparent;
+    border: thin solid;
+    border-color: grey;
+}
+
+/* Change the font size of all nav pills */
+#buttons .nav-pills {
+  font-size: 50px;
+}
+
+/* Color when mouse hovers over the pills */
+.nav>li:hover, #aboutButton a.nav-link:hover {
+  background-color: #B8B8B8;
+}
+
+#banner a[href="/signUp"]{
+  display: inline-block;
+  color: grey;
+  opacity: 0.5;
+  font-size: 35px;
+  border: thin solid;
+  border-color: grey;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  margin-top: 26px;
+}
+
+#banner a[href="/signUp"]:hover {
+  background-color: #C2FFB5;
+}
+
+/* intro sentence on the main page */
+#intro p {
+  color: gray;
+  text-align: center;
+  position: relative;
+  font-family: "Bungee Shade";
+  font-size: 1.8em;
+}
+/* First sentence on the about page */
+#mainAboutParagraph h1 {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 60pt;
+}
+
+/* Main paragraph on about page */
+#mainAboutParagraph p {
+  font-family: "Quicksand";
+  color: gray;
+  font-size: 15pt;
+  text-align: center;
+  border: solid white thin;
+}
+
+#addRestaurant h1.custom {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 42pt;
+}
+
+#addRestaurant p.custom {
+  text-align: center;
+  font-size: 15pt;
+}
+
+/* custom font and color */
+.custom {
+  color: gray;
+  font-family: "Bungee Shade";
+}
+
+/* Applies to all icons to be centered */
+#icons {
+  text-align: left;
+  padding-top: 300px;
+}
+
+/* Facebook icon */
+#icons .facebook:hover {
+  background: linear-gradient(blue, #1E35CD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/* LinkedIn icon */
+#icons .linkedin:hover {
+  background: linear-gradient(#7486FA, #4D60DE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/* Instagram icon */
+#icons .instagram:hover {
+  background: linear-gradient(red, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/* github icon */
+#icons .github:hover {
+  /* This is to change the color of the icon when you hover over it
+   without the color leaking */
+  background: linear-gradient(#AD61FA, #D9C5ED);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  bottom: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#aboutSignUp h1.custom {
+  text-align: center;
+  color: gray;
+  padding-top: 100px;
+  font-size: 60pt;
+}
+
+#aboutSignUp p.custom {
+  text-align: center;
+  font-size: 15pt;
+}
+
+#signedUp p.custom {
+  padding-top: 420px;
+}
+
+#signedUp a.button {
+  margin-left: 510px;
+  margin-bottom: 100px;
+}
+
+#aboutSignUp form {
+  margin: 50px;
+  font-family: "Quicksand";
+  color: gray;
+  width: 20%;
+  left: 36%;
+  right: 25%;
+  position: absolute;
+}
+
+#aboutSignUp button {
+  left: 33%;
+  position: absolute;
+}
+
+#startInstructions h1.custom {
+  text-align: center;
+  padding-top: 100px;
+  font-size: 40pt;
+  display: block;
+  position: relative;
+}
+
+#startInstructions p.custom {
+  text-align: center;
+  font-size: 15pt;
+}
+
+#checkBoxes .col{
+  left: 20%;
+  vertical-align: left;
+  position: relative;
+  bottom: 1px;
+  font-family: "Quicksand";
+  color: gray;
+}
+
+#directSearch {
+  font-family: "Bungee Shade";
+  font-size: 15pt;
+  color: gray;
+}
+
+#directSearch button.btn {
+  position: relative;
+  background: transparent;
+  color: grey;
+  border-color: grey;
+  margin-right: 226px;
+  margin-top: 10px;
+  bottom: 3px;
+}
+
+/* Color when mouse hovers over the pills */
+#directSearch button.btn:hover  {
+    background-color: #B8B8B8;
+}
+
+#aboutWishList h1.custom {
+  text-align: center;
+  padding-top: 100px;
+  font-size: 60pt;
+}
+
+#diaryIcons i.fa.fa-pencil {
+  color:#F0E68C;
+  padding: 14px;
+  position: absolute;
+}
+
+#searchForm label {
+  font-size: 30pt;
+  padding-left: 120pt;
+}
+
+#searchForm input {
+  /* margin allows page to scroll, makes page longer */
+  margin: 0px;
+  width: 30%;
+  left: 34%;
+  right: 25%;
+  /* moves the search bar to center of page */
+  top: 488px;
+  padding: 10px;
+  position: absolute;
+  font-family: "Quicksand";
+}
+
+#searchForm   a.nav-link {
+  color: gray;
+  opacity: 0.5;
+  background: transparent;
+  border: thin solid;
+  border-color: #d9d9d9;
+  font-size: 30pt;
+  padding: 5px;
+  left: 65%;
+  top: 419.5px;
+  position: absolute;
+}
+
+#searchForm p.custom {
+  font-size: 25pt;
+}
+
+#newRestaurantForm form {
+  display: inline;
+  margin: 100px;
+  font-family: "Quicksand";
+  color: gray;
+  width: 20%;
+  left: 36%;
+  right: 25%;
+  position: absolute;
+}
+
+#newRestaurantForm input#name {
+  width: 100%;
+}
+
+#newRestaurantForm button {
+  background: transparent;
+  border: thin solid grey;
+  color: grey;
+}
+
+#results h1.custom {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #18395C;
+  /* overflow-x: hidden; */
+  transition: 0.5s;
+  padding-top: 60px;
+}
