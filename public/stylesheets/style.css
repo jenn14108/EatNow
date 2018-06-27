@@ -50,11 +50,10 @@ body {
   font-size: 40px;
 }
 
-#navbarToggleExternalContent .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+#navbarToggleExternalContent .nav-pills .nav-link.active, .nav-pills:focus .show > .nav-link {
   float: none;
   display: inline-block;
   text-align: center;
-  color: grey;
   opacity: 0.5;
   background: transparent;
   border: thin solid;
@@ -320,12 +319,10 @@ body {
 #newRestaurantForm form {
   font-size: 20px;
   display: inline;
-  margin: 100px;
+  margin: 50px 0px 50px 540px;
   font-family: "Quicksand";
   color: gray;
   width: 20%;
-  left: 33%;
-  right: 25%;
   position: absolute;
 }
 

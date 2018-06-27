@@ -52,6 +52,8 @@ function isLoggedIn(req,res,next) {
   res.locals.loggedIn = false;
   if (req.isAuthenticated()){
     console.log("user has been Authenticated");
+    res.locals.user = req.user
+    res.locals.loggedIn = true
     return next();
   } else {
     console.log("user has not been auntheticated...");
