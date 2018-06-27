@@ -14,7 +14,7 @@ block content
         input#name.form-control(for = 'name', type='text',name ='name', placeholder="Enter the restaurant's name")
         br
         |   Location:
-        select.form-control.form-control-sm(type='text', name='location', value = location)
+        select.form-control.form-control-sm(for = 'location', type='text', name='location', value = location)
           option Boston
           option Cambridge
           option Wellesley
@@ -46,7 +46,7 @@ block content
           option Natick
         br
         |  Type of Food:
-        select.form-control.form-control-sm(type='text', name='food_type', value=food_type)
+        select.form-control.form-control-sm(for = "food_type" , type='text', name='food_type', value=food_type)
           option Asian Fusion
           option American
           option Chinese
@@ -58,6 +58,7 @@ block content
           option Indian
           option Italian
           option Korean
+          option Tapas
         br
         button.btn.btn-primary(type='submit') Submit
 
