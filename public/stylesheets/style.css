@@ -3,6 +3,10 @@ body {
   background-color: #e8eae9;
 }
 
+#banner .container {
+  margin: 10px auto 20px auto;
+}
+
 /* This sets up the top banner */
 #banner h1.custom {
   display: inline-block;
@@ -27,11 +31,8 @@ body {
   color: red;
 }
 
-#bootstrapCarousel .container{
-  height: 600px;
-  margin-top: -70px;
-  margin-left:50px;
-  margin-right:50px;
+#carousel .container {
+  padding: 50px 0px 50px 0px;
 }
 
 /* This specifies the position of the start button */
@@ -43,13 +44,10 @@ body {
   font-size: 50px;
 }
 
-#aboutButton ul.nav {
-  text-align: center;
-  position: absolute;
-  padding-top: 12px;
+#aboutButton a.nav-link {
+  width: fit-content;
+  margin: 16px auto 16px auto;
   font-size: 40px;
-  width: 20%;
-  left: 40%;
 }
 
 #navbarToggleExternalContent .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -83,7 +81,7 @@ body {
 }
 
 /* Color when mouse hovers over the pills */
-.nav>li:hover, #aboutButton .nav-item:hover {
+.nav>li:hover, #aboutButton a.nav-link:hover {
   background-color: #B8B8B8;
 }
 
