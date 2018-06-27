@@ -111,8 +111,10 @@ body {
 }
 /* First sentence on the about page */
 #mainAboutParagraph h1 {
+  margin: 0px 0px 10px 0px;
   text-align: center;
   padding-top: 50px;
+  padding-bottom: 20px;
   font-size: 60pt;
 }
 
@@ -123,6 +125,7 @@ body {
   font-size: 15pt;
   text-align: center;
   border: solid white thin;
+  margin: 10px 0px 0px 0px;
 }
 
 #addRestaurant h1.custom {
