@@ -12,7 +12,7 @@ exports.getAllSearchTerms = ( req, res ) => {
       console.log(`searchHistory=${searchHistory}`)
       res.render( 'search', {
         //userInfo: userInfo
-        info:searchHistory
+        searchHistory:searchHistory
       } );
     } )
     .catch( ( error ) => {
@@ -26,16 +26,14 @@ exports.getAllSearchTerms = ( req, res ) => {
 
 exports.saveSearchTerm = ( req, res ) => {
   console.log("in saveSearchTerm!!!!!!");
-  //console.dir(req);
   let newSearchTerm = new searchHistory( {
     term: req.body.term
   })
-
   console.log(newSearchTerm);
-
   newSearchTerm.save()
     .then( () => {
-      res.redirect( '/results' );
+      res.redirect('/getRestaurant?data=' + newSearchTerm.term);
+      //next();
     } )
     .catch( error => {
       res.send( error );

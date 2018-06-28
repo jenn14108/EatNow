@@ -10,7 +10,7 @@ const
   mongoose = require( 'mongoose');
   mainPageRouter = require('./routes/mainPage');
   aboutRouter = require('./routes/about');
-  resultsRouter = require('./routes/results');
+  //resultsRouter = require('./routes/results');
   recentSearchesRouter = require('./routes/recentSearches');
 
   //Set up needed variables in order to do authentication
@@ -63,7 +63,7 @@ function isLoggedIn(req,res,next) {
 }
 
 
-// here is where we check on their logged in status
+// here is where we check on a user's log-in status (middleware)
 app.use((req,res,next) => {
   res.locals.loggedIn = false
   if (req.isAuthenticated()){
@@ -71,12 +71,12 @@ app.use((req,res,next) => {
     res.locals.user = req.user
     res.locals.loggedIn = true
     if (req.user){
-      if (req.user.googleemail=='tjhickey@brandeis.edu'){
+      if (req.user.googleemail=='jelee14108@brandeis.edu'){
         console.log("Owner has logged in")
-        res.locals.status = 'teacher'
+        res.locals.status = 'owner'
       } else {
-        console.log('student has logged in')
-        res.locals.status = 'student'
+        console.log('some user has logged in')
+        res.locals.status = 'user'
       }
     }
   }
@@ -86,7 +86,7 @@ app.use((req,res,next) => {
 app.use('/recentSearches', recentSearchesRouter);
 app.use('/', mainPageRouter);
 app.use('/about', aboutRouter);
-app.use('/results', resultsRouter);
+//app.use('/results', resultsRouter);
 //app.use('/search', searchRouter);
 //app.use('/signUp', signUpRouter);
 
@@ -132,14 +132,15 @@ app.post('/deleteUserInfo', userInfoController.deleteUserInfo);
 
 //routing for the page that stores search terms into the database
 //no need for deletion because we want to keep search history
-app.get('/search', searchHistoryController.getAllSearchTerms);
+app.get('/search',searchHistoryController.getAllSearchTerms);
 app.post('/saveSearchTerm', searchHistoryController.saveSearchTerm);
+//,restaurantsController.getRestaurant);
+
 
 app.use('/', function(req, res, next) {
   console.log("in / controller")
   res.render('signUp', { title: 'Sign Up' });
 });
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

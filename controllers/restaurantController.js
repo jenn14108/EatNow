@@ -46,12 +46,16 @@ exports.saveRestaurant = (req, res) => {
 };
 
 exports.getRestaurant = (req, res) => {
-  console.log("in getRestaurant!");
-  let userFoodType = req.body.food_type
-  if (typeof(userRestaurant) =='string'){
-    RestaurantInfo.findOne({food_type:userFoodType})
-      .exec()
-      .then(() => {res.redirect('/results')})
-      .catch((error) => {res.send(error)})
-  }
+  console.log("in getRestaurant! FINALLY!!!");
+  var userFoodType = req.query.data;
+  console.log(userFoodType)
+  RestaurantInfo.findOne({food_type:userFoodType})
+    .exec()
+    .then((restaurants) => {
+      console.log(`restaurants=${restaurants}`)
+      res.render('results',{
+        restaurants: restaurants
+      });
+    })
+    .catch((error) => {res.send(error)})
 };
