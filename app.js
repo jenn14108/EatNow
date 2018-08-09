@@ -8,7 +8,6 @@ const
   restaurantsController = require('./controllers/restaurantController');
   mongoose = require( 'mongoose');
   mainPageRouter = require('./routes/mainPage');
-  aboutRouter = require('./routes/about');
   //resultsRouter = require('./routes/results');
 
 
@@ -34,7 +33,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', mainPageRouter);
-app.use('/about', aboutRouter);
 //app.use('/results', resultsRouter);
 //app.use('/search', searchRouter);
 

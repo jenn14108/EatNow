@@ -12,18 +12,18 @@ body {
   display: inline-block;
   color: red;
   font-size: 66px;
-  position: sticky;
-  top: 10000px;
-  margin-left: -266px;
+  position: relative;
+  top: 20px;
 }
 
-#banner img {
-  positive: relaive; /* allows for positional changes */
+#banner img.first {
+  position: relative;; /* allows for positional changes */
   display:inline-block;
-  margin: 0 auto;
-  margin-left: -460px;
-  width: 100px;
-  top: 20px;
+  transform: scaleX(-1);
+}
+
+#banner img.first, img.second {
+  padding: 0px 10px 0px 16px;
 }
 
 #logo {
@@ -84,23 +84,6 @@ body {
   background-color: #B8B8B8;
 }
 
-#banner a[href="/signUp"]{
-  display: inline-block;
-  color: grey;
-  opacity: 0.5;
-  font-size: 35px;
-  border: thin solid;
-  border-color: grey;
-  position: absolute;
-  top: 0px;
-  right: 0;
-  margin-top: 26px;
-}
-
-#banner a[href="/signUp"]:hover {
-  background-color: #C2FFB5;
-}
-
 /* intro sentence on the main page */
 #intro p {
   color: gray;
@@ -147,33 +130,13 @@ body {
 
 /* Applies to all icons to be centered */
 #icons {
-  text-align: left;
-  padding-top: 300px;
-}
-
-/* Facebook icon */
-#icons .facebook:hover {
-  background: linear-gradient(blue, #1E35CD);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  bottom: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
+  text-align: center;
+  padding-top: 50px;
 }
 
 /* LinkedIn icon */
 #icons .linkedin:hover {
   background: linear-gradient(#7486FA, #4D60DE);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  bottom: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
-}
-
-/* Instagram icon */
-#icons .instagram:hover {
-  background: linear-gradient(red, yellow);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   bottom: 5px;
@@ -191,42 +154,6 @@ body {
   bottom: 5px;
   padding-right: 10px;
   padding-left: 10px;
-}
-
-#aboutSignUp h1.custom {
-  text-align: center;
-  color: gray;
-  padding-top: 100px;
-  font-size: 60pt;
-}
-
-#aboutSignUp p.custom {
-  text-align: center;
-  font-size: 15pt;
-}
-
-#signedUp p.custom {
-  padding-top: 420px;
-}
-
-#signedUp a.button {
-  margin-left: 510px;
-  margin-bottom: 100px;
-}
-
-#aboutSignUp form {
-  margin: 50px;
-  font-family: "Quicksand";
-  color: gray;
-  width: 20%;
-  left: 36%;
-  right: 25%;
-  position: absolute;
-}
-
-#aboutSignUp button {
-  left: 33%;
-  position: absolute;
 }
 
 #startInstructions h1.custom {
@@ -270,18 +197,6 @@ body {
 /* Color when mouse hovers over the pills */
 #directSearch button.btn:hover  {
     background-color: #B8B8B8;
-}
-
-#aboutWishList h1.custom {
-  text-align: center;
-  padding-top: 100px;
-  font-size: 60pt;
-}
-
-#diaryIcons i.fa.fa-pencil {
-  color:#F0E68C;
-  padding: 14px;
-  position: absolute;
 }
 
 #searchForm label {

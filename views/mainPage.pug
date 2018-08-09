@@ -5,8 +5,10 @@ block content
     .container
       .row
         .col-md-12.text-center
+          img.img-fluid.first(src='/images/logo.png')
           h1.custom EAT NOW
-          img.img-fluid(src='/images/logo.png')
+          img.img-fluid.second(src='/images/logo.png')
+
   section#intro
     .container
       .row
@@ -15,7 +17,7 @@ block content
 
   section#aboutButton
     nav.nav-pills.nav-fill
-      a.nav-link.active(href="/about").custom About
+      a.nav-link.active(href="/search").custom Start
 
   section#carousel
     .container
@@ -37,3 +39,26 @@ block content
         a.carousel-control-next(href='#bootstrapCarousel', role='button', data-slide='next')
           span.carousel-control-next-icon(aria-hidden='true')
           span.sr-only Next
+
+    section#mainAboutParagraph
+      h1.custom Why Use Eat Now?
+      p
+        | Have you ever been hanging out with a friend and suddenly got very hungry, but none of you can decide
+        br
+        | as to where to have dinner? Well, that happens to me all the time. With Eat Now, such a situation would never occur
+        br
+        | again. Simply enter the types of food you would like to eat, and your location and eat now
+        br
+        | will decide on a spot for you!
+
+        section#icons
+          .container
+            .row
+              .col-md-12
+                ul.list-inline
+                  a.linkedIn(href="https://www.linkedin.com/in/jennifer-lee-232268139/", style="color: #CBCBCB")
+                    li.list-inline-item
+                      i.fa.linkedin.fa-linkedin.fa-3x(aria-hidden="true")
+                  a.github(href="https://github.com/jenn14108", style="color: #CBCBCB")
+                    li.list-inline-item
+                      i.fa.github.fa-github-square.fa-3x(aria-hidden="true")
