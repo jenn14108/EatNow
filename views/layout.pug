@@ -11,24 +11,6 @@ html(lang="en")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Quicksand:500,700")
     block head
   body
-    if loggedIn
-      .pos-f-t
-        #navbarToggle.collapse
-          .bg-dark.p-4
-            h4.text-white.custom Welcome, logged-in user
-            ul.nav.nav-pills
-              li.nav-item
-                  a.nav-link.active(href="#").custom Your Profile
-              .nav.nav-pills
-                li.nav-item
-                  a.nav-link.active(href="addRestaurants").custom Add A Restaurant
-              .nav.nav-pills
-                li.nav-item
-                  a.nav-link.active(href="recentSearches").custom Recent Searches
-        nav.navbar.navbar-dark.bg-dark
-          button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarToggle', aria-controls='navbarToggle', aria-expanded='false', aria-label='Toggle navigation')
-            span.navbar-toggler-icon
-
 
   block content
   .script

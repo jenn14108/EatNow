@@ -4,21 +4,13 @@ const
   path = require('path');
   cookieParser = require('cookie-parser');
   logger = require('morgan');
-  userInfoController = require('./controllers/userInfoController');
   searchHistoryController = require('./controllers/searchHistoryController');
   restaurantsController = require('./controllers/restaurantController');
   mongoose = require( 'mongoose');
   mainPageRouter = require('./routes/mainPage');
   aboutRouter = require('./routes/about');
   //resultsRouter = require('./routes/results');
-  recentSearchesRouter = require('./routes/recentSearches');
 
-  //Set up needed variables in order to do authentication
-  //GoogleStrategy = require('passport-google-oauth').OAuth25Strategy; --> in cofig/passport.js
-  session = require('express-session');
-  passport = require('passport');
-  configPassport = require('./config/passport');
-  configPassport(passport);
 
 var app = express();
 
@@ -34,11 +26,6 @@ db.once('open', function() {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-//CODE FOR AUTHENTICATION
-app.use(session({secret: 'zzbbyanana'}));
-app.use(passport.initialize());
-app.use(passport.session());
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -46,101 +33,22 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-//route middleware to make sure a user is logged in to see certain pages
-function isLoggedIn(req,res,next) {
-  console.log("checking to see if user is authenticated!");
-  //if user is authenticated in the session, continue
-  res.locals.loggedIn = false;
-  if (req.isAuthenticated()){
-    console.log("user has been Authenticated");
-    res.locals.user = req.user
-    res.locals.loggedIn = true
-    return next();
-  } else {
-    console.log("user has not been auntheticated...");
-    res.redirect('/login');
-  }
-}
-
-
-// here is where we check on a user's log-in status (middleware)
-app.use((req,res,next) => {
-  res.locals.loggedIn = false
-  if (req.isAuthenticated()){
-    console.log("user has been Authenticated")
-    res.locals.user = req.user
-    res.locals.loggedIn = true
-    if (req.user){
-      if (req.user.googleemail=='jelee14108@brandeis.edu'){
-        console.log("Owner has logged in")
-        res.locals.status = 'owner'
-      } else {
-        console.log('some user has logged in')
-        res.locals.status = 'user'
-      }
-    }
-  }
-  next()
-})
-
-app.use('/recentSearches', recentSearchesRouter);
 app.use('/', mainPageRouter);
 app.use('/about', aboutRouter);
 //app.use('/results', resultsRouter);
 //app.use('/search', searchRouter);
-//app.use('/signUp', signUpRouter);
 
-
-//Authentication routes
-app.get('/loginerror', function(req,res){
-  res.render('loginerror',{})
-})
-app.get('/login', function(req,res){
-  res.render('login',{})
-})
-// route for logging out
-app.get('/logout', function(req, res) {
-        req.logout();
-        res.redirect('/');
-    });
-// =====================================
-// GOOGLE ROUTES =======================
-// =====================================
-// send to google to do the authentication
-// profile gets us their basic information including their name
-// email gets their emails
-//This rout is visited to start the google authentication. Passport will send you to
-//Google to get authenticated. Then, it will send the browser back to /login/authorized page
-app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
-
-
-app.get('/login/authorized',
-        passport.authenticate('google', {
-                successRedirect : '/',
-                failureRedirect : '/loginerror'
-        }));
 
 //routing for the restaurants results mainPage
 app.get('/addRestaurants', restaurantsController.getAllRestaurants);
 app.get('/getRestaurant', restaurantsController.getRestaurant);
 app.post('/saveRestaurant', restaurantsController.saveRestaurant);
 
-//routing for the page that stores user information into the database
-app.get('/signUp', userInfoController.getAllUserInfo);
-app.post('/saveUserInfo', userInfoController.saveUserInfo);
-app.post('/deleteUserInfo', userInfoController.deleteUserInfo);
-
 //routing for the page that stores search terms into the database
 //no need for deletion because we want to keep search history
 app.get('/search',searchHistoryController.getAllSearchTerms);
 app.post('/saveSearchTerm', searchHistoryController.saveSearchTerm);
 //,restaurantsController.getRestaurant);
-
-
-app.use('/', function(req, res, next) {
-  console.log("in / controller")
-  res.render('signUp', { title: 'Sign Up' });
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
