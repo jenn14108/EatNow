@@ -5,66 +5,64 @@ block content
     h1.custom You are one step closer to eat now!
     p.custom Start by selecting the types of food you would be down to eat:
   div
+
   section#checkBoxes
     .container
-      .row
+      .row.text-center
         .col
-          .checkbox
+          ul
             label
               input(type="checkbox", value = "")
               | Chinese
-          .checkbox
+          ul
             label
               input(type="checkbox", value = "")
               | Japanese
-          .checkbox
+          ul
             label
               input(type="checkbox", value = "")
               | Vietnamese
-          .checkbox
+          ul
             label
               input(type="checkbox", value = "")
               | Thai
-          .checkbox
+          ul
             label
               input(type="checkbox", value = "")
               | Greek
         .col
-          .checkbox
+          ul
             label
               input(type="checkbox", value = "")
               | American
-          .checkbox
+          ul
             label
               input(type="checkbox", value = "")
               | Mexican
-          .checkbox
+          ul
             label
               input(type="checkbox", value = "")
               | Indian
-          .checkbox
+          ul
             label
               input(type="checkbox", value = "")
               | Italian
-          .checkbox
+          ul
             label
               input(type="checkbox", value = "")
               | Korean
-      div
+  div
       section#directSearch
-          p Or - directly search for restaurants serving a specific type of cuisine
-          form(method='post' action = 'saveSearchTerm')
+          p.text-center Or - directly search for restaurants serving a specific type of cuisine
+          form.text-center(method='post' action = 'saveSearchTerm')
             #searchForm
               .row
                 label(for="cuisine").custom Find:
                 hr
                 input(type="text" id="search" name="term" placeholder='Search anything...')
                 br
-                button.btn.custom.btn-primary(href = "/results" type='submit') Submit
-
-                //ul.nav.nav-pills.nav-center(type="submit")
-                //  li.nav-item
-                //    a.nav-link.active(href="/results").custom Search
+                nav.nav-pills.nav-fill
+                  a.nav-link.active(href="/results" type='submit').custom Submit
 
             //COMMENTED OUT
             //div

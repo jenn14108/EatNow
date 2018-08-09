@@ -35,16 +35,7 @@ body {
   padding: 50px 0px 50px 0px;
 }
 
-/* This specifies the position of the start button */
-#startbtn li.nav-item{
-  text-align: center;
-  margin-top: 60px;
-  margin-left: 440px;
-  position: absolute;
-  font-size: 50px;
-}
-
-#aboutButton a.nav-link {
+#startButton a.nav-link {
   width: fit-content;
   margin: 16px auto 16px auto;
   font-size: 40px;
@@ -80,7 +71,7 @@ body {
 }
 
 /* Color when mouse hovers over the pills */
-.nav>li:hover, #aboutButton a.nav-link:hover {
+.nav>li:hover, #startButton a.nav-link:hover {
   background-color: #B8B8B8;
 }
 
@@ -169,10 +160,9 @@ body {
   font-size: 15pt;
 }
 
-#checkBoxes .col{
-  left: 20%;
-  vertical-align: left;
+#checkBoxes label {
   position: relative;
+  vertical-align: left;
   bottom: 1px;
   font-family: "Quicksand";
   color: gray;
@@ -189,9 +179,6 @@ body {
   background: transparent;
   color: grey;
   border-color: grey;
-  margin-right: 226px;
-  margin-top: 10px;
-  bottom: 3px;
 }
 
 /* Color when mouse hovers over the pills */
@@ -199,39 +186,32 @@ body {
     background-color: #B8B8B8;
 }
 
+#searchForm {
+  display: inline-block;
+}
 #searchForm label {
   font-size: 30pt;
-  padding-left: 120pt;
+  vertical-align: middle;
+  display: inline-block;
+  padding-right: 20px;
 }
 
 #searchForm input {
-  /* margin allows page to scroll, makes page longer */
-  margin: 0px;
-  width: 30%;
-  left: 34%;
-  right: 25%;
-  /* moves the search bar to center of page */
-  top: 488px;
-  padding: 10px;
-  position: absolute;
+  position: relative;
   font-family: "Quicksand";
-}
-
-#searchForm   a.nav-link {
-  color: gray;
-  opacity: 0.5;
-  background: transparent;
-  border: thin solid;
-  border-color: #d9d9d9;
-  font-size: 30pt;
-  padding: 5px;
-  left: 65%;
-  top: 419.5px;
-  position: absolute;
+  margin-right: 20px;
+  padding-right: 60px;
 }
 
 #searchForm p.custom {
   font-size: 25pt;
+}
+
+#searchForm a.nav-link {
+  position: relative;
+  width: fit-content;
+  margin-top: 2px;
+  font-size: 30px;
 }
 
 #newRestaurantForm form {
