@@ -9,6 +9,8 @@ const
   mongoose = require( 'mongoose');
   mainPageRouter = require('./routes/mainPage');
   //resultsRouter = require('./routes/results');
+  yelpClientID = process.env.YELPCLIENTID;
+  yelpAPIKey = process.env.YELPAPIKEY;
 
 
 var app = express();
