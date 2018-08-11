@@ -1,6 +1,13 @@
 doctype html
 html(lang="en")
   head
+  section#banner
+    .container
+      .row
+        .col-md-12.text-center
+          img.img-fluid.first(src='/images/logo.png')
+          h1.custom EAT NOW
+          img.img-fluid.second(src='/images/logo.png')
     title= title
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
@@ -9,10 +16,12 @@ html(lang="en")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Bungee+Shade")
     link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Quicksand:500,700")
-    block head
-  body
+  block head
 
   block content
+
+  body
+
   .script
     script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
