@@ -1,6 +1,7 @@
 # EatNow
 
-![](/images/EatNow.png?raw=true)
+<img alt="EatNow" src="public/images/EatNow.png">
+
 
 Have you ever gotten hungry all of a sudden when hanging out with your friends but cannot, for the life of you,
 decide on where to get food? Well, for me, that is a common occurrence. This is the main reason why I decided to create
