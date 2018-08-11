@@ -1,6 +1,10 @@
 # EatNow
-Have you ever gotten hungry all of a sudden when hanging out with your friends but cannot, for the life of you, 
+
+![Alt text](/images/EatNow.png?raw=true)
+
+
+Have you ever gotten hungry all of a sudden when hanging out with your friends but cannot, for the life of you,
 decide on where to get food? Well, for me, that is a common occurence. This is the main reason why I decided to create
-EatNow, a website that utilizes the Yelp Fusion API to make restaruant recommendations. I'm also aware that many apps and 
+EatNow, a website that utilizes the Yelp Fusion API to make restaruant recommendations. I'm also aware that many apps and
 websites are readily available to do such a task (such as WHERE THE F*** SHOULD I GO EAT?), but I thought that it would be cool
-if I could build my own. So here it is! 
+if I could build my own. So here it is!
