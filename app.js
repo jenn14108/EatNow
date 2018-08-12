@@ -1,5 +1,4 @@
 const
-  mongoose = require( 'mongoose');
   createError = require('http-errors');
   express = require('express');
   path = require('path');
@@ -7,20 +6,11 @@ const
   logger = require('morgan');
   bodyParser = require('body-parser');
   connect = require('connect');
-  restaurantsController = require('./controllers/restaurantController');
   resultsController = require('./controllers/resultsController');
   mainPageRouter = require('./routes/mainPage');
   searchPageRouter = require('./routes/search');
 
 var app = express();
-
-//connect to database
-mongoose.connect( 'mongodb://localhost/EatNow')
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log("we are connected!")
-});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
