@@ -15,11 +15,12 @@ block content
   section#moreOptions
     .container
       .text-center
-        a(href=yelpLink)
-          img#yelpLogo(src='/images/Yelp_trademark_RGB.png' alt='yelp')
-        a.button.btn.btn-primary#anotherRec.custom(type="button" href="/results")
-          | I want another
-          br
-          | suggestion
-        a(href="https://www.google.com/maps/search/?api=1&query=" + googleQuery)
-          img#googleMapsLogo(src='/images/googleMaps.png' alt='google maps')
+        if !ranOut
+          a(href=yelpLink)
+            img#yelpLogo(src='/images/Yelp_trademark_RGB.png' alt='yelp')
+          a.button.btn.btn-primary#anotherRec.custom(type="button" href="/results")
+            | I want another
+            br
+            | suggestion
+          a(href="https://www.google.com/maps/search/?api=1&query=" + googleQuery)
+            img#googleMapsLogo(src='/images/googleMaps.png' alt='google maps')
