@@ -2,68 +2,25 @@ extends layout
 
 block content
   section#startInstructions
-    h1.custom You are one step closer to eat now!
-    p.custom Start by selecting the types of food you would be down to eat:
-  div
-
-  section#checkBoxes
     .container
-      .row.text-center
-        .col
-          ul
-            label
-              input(type="checkbox", value = "")
-              | Chinese
-          ul
-            label
-              input(type="checkbox", value = "")
-              | Japanese
-          ul
-            label
-              input(type="checkbox", value = "")
-              | Vietnamese
-          ul
-            label
-              input(type="checkbox", value = "")
-              | Thai
-          ul
-            label
-              input(type="checkbox", value = "")
-              | Greek
-        .col
-          ul
-            label
-              input(type="checkbox", value = "")
-              | American
-          ul
-            label
-              input(type="checkbox", value = "")
-              | Mexican
-          ul
-            label
-              input(type="checkbox", value = "")
-              | Indian
-          ul
-            label
-              input(type="checkbox", value = "")
-              | Italian
-          ul
-            label
-              input(type="checkbox", value = "")
-              | Korean
-  div
-      section#directSearch
-          p.text-center Or - directly search for restaurants serving a specific type of cuisine
-          form.text-center(method='post' action = 'saveSearchTerm')
-            #searchForm
-              .row
-                label(for="cuisine").custom Find:
-                hr
-                input(type="text" id="search" name="term" placeholder='Search anything...')
-                br
-                nav.nav-pills.nav-fill
-                  a.nav-link.active(href="/results" type='submit').custom Submit
+      .row
+        .col-md-12
+          h1.custom You are one step closer to eat now!
 
-            //COMMENTED OUT
-            //div
-            //  p.custom Search-term Entered: #{search_term}
+  section#directSearch
+      form.text-center(method='post' action="yelpFindRestaurant")
+        #searchForm
+          .row
+            .col-md-12
+              label.custom Type of Food:
+              input#term(type="text" name="term" placeholder='e.g. Chinese')
+          .row
+            .col-md-12
+            #searchFormsecondRow
+              label.custom Location:
+              input#location(type="text" name="location" placeholder='City, State')
+              button.btn.btn-primary(type="submit" value="submit").custom Go!
+
+
+  script(type="text/javascript" language="javascript"
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")

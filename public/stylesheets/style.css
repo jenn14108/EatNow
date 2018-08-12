@@ -104,7 +104,6 @@ body {
 
 #addRestaurant h1.custom {
   text-align: center;
-  padding-top: 50px;
   font-size: 42pt;
 }
 
@@ -149,7 +148,6 @@ body {
 
 #startInstructions h1.custom {
   text-align: center;
-  padding-top: 100px;
   font-size: 40pt;
   display: block;
   position: relative;
@@ -188,6 +186,7 @@ body {
 
 #searchForm {
   display: inline-block;
+  padding-top: 60px;
 }
 #searchForm label {
   font-size: 30pt;
@@ -196,21 +195,28 @@ body {
   padding-right: 20px;
 }
 
+#searchForm .row:not(:first-child) {
+  padding-top: 20px;
+}
+
 #searchForm input {
   position: relative;
   font-family: "Quicksand";
   margin-right: 20px;
-  padding-right: 60px;
+  width: 360px;
 }
 
 #searchForm p.custom {
   font-size: 25pt;
 }
 
+#searchFormSecondRow label.custom, #go  {
+  display: inline-block;
+}
+
 #searchForm a.nav-link {
-  position: relative;
   width: fit-content;
-  margin-top: 2px;
+  margin: 16px auto 16px auto;
   font-size: 30px;
 }
 

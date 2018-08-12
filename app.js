@@ -1,17 +1,16 @@
 const
+  mongoose = require( 'mongoose');
   createError = require('http-errors');
   express = require('express');
   path = require('path');
   cookieParser = require('cookie-parser');
   logger = require('morgan');
-  searchHistoryController = require('./controllers/searchHistoryController');
+  bodyParser = require('body-parser');
+  connect = require('connect');
   restaurantsController = require('./controllers/restaurantController');
-  mongoose = require( 'mongoose');
+  resultsController = require('./controllers/resultsController');
   mainPageRouter = require('./routes/mainPage');
-  //resultsRouter = require('./routes/results');
-  yelpClientID = process.env.YELPCLIENTID;
-  yelpAPIKey = process.env.YELPAPIKEY;
-
+  searchPageRouter = require('./routes/search');
 
 var app = express();
 
@@ -28,27 +27,17 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', mainPageRouter);
-//app.use('/results', resultsRouter);
-//app.use('/search', searchRouter);
+app.post('/yelpFindRestaurant' , resultsController.yelpFindRestaurant,
+                                resultsController.renderMain);
+app.use('/search', searchPageRouter);
 
-
-//routing for the restaurants results mainPage
-app.get('/addRestaurants', restaurantsController.getAllRestaurants);
-app.get('/getRestaurant', restaurantsController.getRestaurant);
-app.post('/saveRestaurant', restaurantsController.saveRestaurant);
-
-//routing for the page that stores search terms into the database
-//no need for deletion because we want to keep search history
-app.get('/search',searchHistoryController.getAllSearchTerms);
-app.post('/saveSearchTerm', searchHistoryController.saveSearchTerm);
-//,restaurantsController.getRestaurant);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
