@@ -224,6 +224,21 @@ body {
   font-size: 30px;
 }
 
+#anotherRec {
+  background: transparent;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  border: thin solid grey;
+  color: grey;
+  font-size: 24px;
+  left: 50px;
+}
+
+#anotherRec:hover, #go .btn-primary:hover   {
+  background-color: #B8B8B8;
+}
+
 #newRestaurantForm form {
   font-size: 20px;
   display: inline;
