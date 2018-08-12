@@ -232,7 +232,6 @@ body {
   border: thin solid grey;
   color: grey;
   font-size: 24px;
-  left: 50px;
 }
 
 #anotherRec:hover, #go .btn-primary:hover   {
@@ -278,7 +277,7 @@ body {
 }
 
 #yelpLogo {
-  width: 300px;
+  width: 280px;
   height: 180px;
   display: inline-block;
 }

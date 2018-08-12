@@ -9,6 +9,7 @@ var restaurantName;
 var restaurantLocation;
 var yelpLink;
 var googleQuery;
+var allRestaurants; var resultLength;
 
 exports.renderMain = (req, res) => {
   res.render('Results', {title: "Results", name:restaurantName,
@@ -27,24 +28,41 @@ exports.yelpFindRestaurant = (req,res,next) => {
 
   client.search(searchRequest)
     .then(response => {
-      var resultLength = response.jsonBody.businesses.length;
+      resultLength = response.jsonBody.businesses.length;
       var pickedNum = Math.floor(Math.random() * (resultLength - 0 + 1)) + 0;
       const pickedRestaurant = response.jsonBody.businesses[pickedNum];
       //console.log(pickedRestaurant);
       //const prettyJson = JSON.stringify(firstResult, null, 4)
       //console.log(prettyJson);
+      allRestaurants = response.jsonBody.businesses;
       restaurantName = pickedRestaurant.name;
       restaurantLocation = pickedRestaurant.location.display_address[0] + "\n" +
                             pickedRestaurant.location.display_address[1];
       yelpLink = pickedRestaurant.url;
       googleQuery = restaurantName.replace(/\s/g, "+") + "+"
                     + restaurantLocation.replace(/\s/g, "+");
-      console.log(googleQuery);
-      console.log(restaurantName);
-      console.log(restaurantLocation);
+      // console.log(googleQuery);
+      // console.log(restaurantName);
+      // console.log(restaurantLocation);
       next();
     })
     .catch(err => {
       console.log(err);
   });
+}
+
+exports.findAnotherRestaurant = (req,res,next) => {
+  console.log('finding another restaurant...');
+  console.log(resultLength)
+  var pickedNum = Math.floor(Math.random() * (resultLength - 0 + 1)) + 0;
+  console.log(pickedNum);
+  const pickedRestaurant = allRestaurants[pickedNum];
+  console.log(pickedRestaurant);
+  restaurantName = pickedRestaurant.name;
+  restaurantLocation = pickedRestaurant.location.display_address[0] + "\n" +
+                        pickedRestaurant.location.display_address[1];
+  yelpLink = pickedRestaurant.url;
+  googleQuery = restaurantName.replace(/\s/g, "+") + "+"
+                + restaurantLocation.replace(/\s/g, "+");
+  next();
 }

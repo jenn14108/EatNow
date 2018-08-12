@@ -26,6 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', mainPageRouter);
 app.post('/yelpFindRestaurant' , resultsController.yelpFindRestaurant,
                                 resultsController.renderMain);
+app.use('/results' , resultsController.findAnotherRestaurant,
+                                  resultsController.renderMain);
 app.use('/search', searchPageRouter);
 
 
