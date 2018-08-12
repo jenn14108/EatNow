@@ -15,21 +15,24 @@ exports.renderMain = (req, res) => {
 exports.yelpFindRestaurant = (req,res,next) => {
   const searchRequest = {
     term: req.body.term,
-    location: req.body.location
+    location: req.body.location,
+    radius: 4500
   };
 
   const client = yelp.client(yelpAPIKey);
 
   client.search(searchRequest)
     .then(response => {
-      const firstResult = response.jsonBody.businesses[0];
-      console.log(response.jsonBody.businesses);
+      var resultLength = response.jsonBody.businesses.length;
+      var pickedNum = Math.floor(Math.random() * (resultLength - 0 + 1)) + 0;
+      const pickedRestaurant = response.jsonBody.businesses[pickedNum];
+      //console.log(response.jsonBody.businesses);
       //console.log(firstResult);
       //const prettyJson = JSON.stringify(firstResult, null, 4)
       //console.log(prettyJson);
-      restaurantName = firstResult.name;
-      restaurantLocation = firstResult.location.display_address[0] + "\n" +
-                            firstResult.location.display_address[1];
+      restaurantName = pickedRestaurant.name;
+      restaurantLocation = pickedRestaurant.location.display_address[0] + "\n" +
+                            pickedRestaurant.location.display_address[1];
       console.log(restaurantName);
       console.log(restaurantLocation);
       next();

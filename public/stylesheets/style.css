@@ -220,6 +220,10 @@ body {
   font-size: 30px;
 }
 
+#go {
+  font-size: 30px;
+}
+
 #newRestaurantForm form {
   font-size: 20px;
   display: inline;
@@ -256,4 +260,16 @@ body {
   /* overflow-x: hidden; */
   transition: 0.5s;
   padding-top: 60px;
+}
+
+#yelpLogo {
+  width: 300px;
+  height: 180px;
+  display: inline-block;
+}
+
+#googleMapsLogo {
+  width: 140px;
+  height: 140px;
+  display: inline-block;
 }
