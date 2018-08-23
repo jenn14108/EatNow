@@ -1,4 +1,4 @@
-//fetch data from Zomato API https://developers.zomato.com/api#headline2
+//fetch data from Yelp API
 'use strict'
 const axios = require('axios');
 const yelp = require('yelp-fusion');
